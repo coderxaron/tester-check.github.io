@@ -9,8 +9,8 @@ const last_sync_display = document.getElementById("ls")
 
 window.onload = async () => {
   //get Group Data from Vercel since cros acsess doesnt work ._.
-  const gag_g = await fetch("https://backend-tester-view/api/group?id=35789249").then(r => r.json());
-  const pvb_g = await fetch("https://backend-tester-view/api/group?id=34869880").then(r => r.json());
+  const gag_g = await fetch("https://backend-tester-view.vercel.app/api/group?id=35789249").then(r => r.json());
+  const pvb_g = await fetch("https://backend-tester-view.vercel.app/api/group?id=34869880").then(r => r.json());
 
   // Load Tester Amount from the Role
   const gagm = gag_g.roles.find(r => r.id === 350564035).memberCount;

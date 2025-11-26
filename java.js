@@ -20,12 +20,26 @@ window.onload = async () => {
   gagt.textContent = `GAG Testers: ${gagm}`;
   pvbt.textContent = `PVB Testers: ${pvbm}`;
 
-  // Old data
-  const last_sync = "21.11.2025";
-  const PVBTESTERS = 550;
-  const GAGTESTERS = 2337;
-  last_sync_display.textContent = `Old Data from: ${last_sync}`;
+  // gET data
+  
+  async function loadLatestData() {
+    const data = await fetch(datastore).then(r => r.json());
+    // newest entry ik really peak
+    return data[data.length - 1];
+  }
 
+  const newest_data = await loadLatestData();
+
+  let gag_ = newest_data.gag;
+  let pvb_ = newest_data.pvb;
+  let t_ = newest_data.timestamp;
+
+  const last_sync = t_;
+  const PVBTESTERS = pvb_;
+  const GAGTESTERS = gag_;
+
+  last_sync_display.textContent = `Old Data from: ${last_sync}`;
+  
   // Display CHanges if there are 
   if (pvbm === PVBTESTERS) { oldpvb.style.color = "orange"; oldpvb.textContent = PVBTESTERS + " ="; }
   if (pvbm > PVBTESTERS) { oldpvb.style.color = "green"; oldpvb.textContent = "+" + (pvbm - PVBTESTERS) + " ↑"; }

@@ -1,5 +1,6 @@
 body {
-    background-color: whitesmoke;
+    background-color: rgba(217, 210, 210, 0.734);
+    background-color: rgb(24, 24, 66);
 }
 
 * {
@@ -8,11 +9,42 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+/*
 div {
-    width: 15cm;  
-    margin-left: auto;
-    margin-right: auto;
-    background-color: gainsboro;
-    border-radius: 0.3cm;
-    box-shadow: 2px 2px 5px rgb(182, 182, 182), -2px -2px 5px rgb(241, 241, 241);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0.1cm;
+    box-shadow: 2px 2px 5px rgba(182, 182, 182, 0), -2px -2px 5px rgba(241, 241, 241, 0);
+}
+*/
+
+#disp {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(8, 8, 19);
+    color: white;
+    border-radius: 0;
+    border: solid;
+    display: block;
+    margin-bottom: 0.5cm;
+    border-color: rgb(37, 29, 86);
+}
+
+footer {
+    background-color: rgb(8, 8, 19);
+    bottom: 0;
+    position: absolute;
+    color: white;
+    height: 1cm;
+    font-size: x-small;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border: solid;
+    border-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: white;
 }

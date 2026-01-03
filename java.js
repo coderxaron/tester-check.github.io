@@ -68,6 +68,12 @@ window.onload = async () => {
   if (gagm > GAGTESTERS) { oldgag.style.color = "green"; oldgag.textContent = "+" + (gagm - GAGTESTERS) + " ↑"; }
   if (gagm < GAGTESTERS) { oldgag.style.color = "red"; oldgag.textContent = "-" + (GAGTESTERS - gagm) + " ↓"; }
 
-  oldforge.textContent = (forgem === FORGETESTERS ? oldforge.style.color="orange" : forgem > FORGETESTERS ? oldforge.style.color="green" : oldforge.style.color="red") || (forgem === FORGETESTERS ? FORGETESTERS+" =" : forgem > FORGETESTERS ? "+"+(forgem-FORGETESTERS)+" ↑" : "-"+(FORGETESTERS-forgem)+" ↓");
-  oldbs.textContent = (bsm === BSTESTERS ? oldbs.style.color="orange" : bsm > BSTESTERS ? oldbs.style.color="green" : oldbs.style.color="red") || (bsm === BSTESTERS ? BSTESTERS+" =" : bsm > BSTESTERS ? "+"+(bsm-BSTESTERS)+" ↑" : "-"+(BSTESTERS-bsm)+" ↓");
+  if (forgem === FORGETESTERS) { oldforge.style.color = "orange"; oldforge.textContent = FORGETESTERS + " ="; }
+  if (forgem > FORGETESTERS) { oldforge.style.color = "green"; oldforge.textContent = "+" + (forgem - FORGETESTERS) + " ↑"; }
+  if (forgem < FORGETESTERS) { oldforge.style.color = "red"; oldforge.textContent = "-" + (FORGETESTERS - forgem) + " ↓"; }
+  
+  if (bsm === BSTESTERS) { oldbs.style.color = "orange"; oldbs.textContent = BSTESTERS + " ="; }
+  if (bsm > BSTESTERS) { oldbs.style.color = "green"; oldbs.textContent = "+" + (bsm - BSTESTERS) + " ↑"; }
+  if (bsm < BSTESTERS) { oldbs.style.color = "red"; oldbs.textContent = "-" + (BSTESTERS - bsm) + " ↓"; }
+
 };

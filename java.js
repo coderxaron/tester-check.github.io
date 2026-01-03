@@ -3,8 +3,14 @@
 //vars:
 const gagt = document.getElementById("gagt")
 const pvbt = document.getElementById("pvbt")
+const forget = document.getElementById("forget")
+const bst = document.getElementById("bst")
+
 const oldgag = document.getElementById("oldgag")
 const oldpvb = document.getElementById("oldpvb")
+const oldforge = document.getElementById("oldforge")
+const oldbs = document.getElementById("oldbs")
+
 const last_sync_display = document.getElementById("ls")
 const datastore = "https://raw.githubusercontent.com/coderxaron/data/main/data/2026-01.json"
 
@@ -12,15 +18,22 @@ window.onload = async () => {
   //get Group Data from Vercel since cros acsess doesnt work ._.
   const gag_g = await fetch("https://backend-tester-view.vercel.app/api/group?id=35789249").then(r => r.json());
   const pvb_g = await fetch("https://backend-tester-view.vercel.app/api/group?id=34869880").then(r => r.json());
+  const forge_g = await fetch("https://backend-tester-view.vercel.app/api/group?id=35489258").then(r => r.json());
+  const bs_g = await fetch("https://backend-tester-view.vercel.app/api/group?id=193446929").then(r => r.json());
 
   // Load Tester Amount from the Role
   const gagm = gag_g.roles.find(r => r.id === 350564035).memberCount;
   const pvbm = pvb_g.roles.find(r => r.id === 532762007).memberCount;
+  const forgem = forge_g.roles.find(r => r.id === 269434048).memberCount;
+  const bsm = bs_g.roles.find(r => r.id === 532762007).memberCount;
+
 
   //Display Live Counts
   gagt.textContent = `GAG Testers: ${gagm}`;
   pvbt.textContent = `PVB Testers: ${pvbm}`;
-
+  forget.textContent = `Forge Testers: ${forgem}`;
+  bst.textContent = `Brainrot Seas Testers: ${bsm}`;
+  
   // gET data
   
   async function loadLatestData() {
@@ -33,11 +46,16 @@ window.onload = async () => {
 
   let gag_ = newest_data.gag;
   let pvb_ = newest_data.pvb;
+  let forge_ = newest_data.forgeQA;
+  let bs_ = newest_data.brainTester;
+  
   let t_ = newest_data.timestamp;
 
   const last_sync = t_;
   const PVBTESTERS = pvb_;
   const GAGTESTERS = gag_;
+  const FORGETESTERS = forge_;
+  const BSTESTERS = bs_;
 
   last_sync_display.textContent = `Old Data from: ${last_sync}`;
   
@@ -49,4 +67,7 @@ window.onload = async () => {
   if (gagm === GAGTESTERS) { oldgag.style.color = "orange"; oldgag.textContent = GAGTESTERS + " ="; }
   if (gagm > GAGTESTERS) { oldgag.style.color = "green"; oldgag.textContent = "+" + (gagm - GAGTESTERS) + " ↑"; }
   if (gagm < GAGTESTERS) { oldgag.style.color = "red"; oldgag.textContent = "-" + (GAGTESTERS - gagm) + " ↓"; }
+
+  oldforge.textContent = (forgem === FORGETESTERS ? oldforge.style.color="orange" : forgem > FORGETESTERS ? oldforge.style.color="green" : oldforge.style.color="red") || (forgem === FORGETESTERS ? FORGETESTERS+" =" : forgem > FORGETESTERS ? "+"+(forgem-FORGETESTERS)+" ↑" : "-"+(FORGETESTERS-forgem)+" ↓");
+  oldbs.textContent = (bsm === BSTESTERS ? oldbs.style.color="orange" : bsm > BSTESTERS ? oldbs.style.color="green" : oldbs.style.color="red") || (bsm === BSTESTERS ? BSTESTERS+" =" : bsm > BSTESTERS ? "+"+(bsm-BSTESTERS)+" ↑" : "-"+(BSTESTERS-bsm)+" ↓");
 };

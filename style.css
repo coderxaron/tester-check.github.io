@@ -32,16 +32,15 @@ div {
 
 footer {
     background-color: rgb(8, 8, 19);
-    bottom: 0;
-    position: absolute;
     color: white;
     height: 1cm;
     font-size: x-small;
+    text-align: center;
+    border: solid black;
+    position: fixed;
     left: 0;
     right: 0;
-    text-align: center;
-    border: solid;
-    border-color: black;
+    bottom: 0;
 }
 
 h1 {

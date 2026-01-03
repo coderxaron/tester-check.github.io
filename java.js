@@ -25,7 +25,7 @@ window.onload = async () => {
   const gagm = gag_g.roles.find(r => r.id === 350564035).memberCount;
   const pvbm = pvb_g.roles.find(r => r.id === 532762007).memberCount;
   const forgem = forge_g.roles.find(r => r.id === 269434048).memberCount;
-  const bsm = bs_g.roles.find(r => r.id === 532762007).memberCount;
+  const bsm = bs_g.roles.find(r => r.id === 606510073).memberCount;
 
 
   //Display Live Counts

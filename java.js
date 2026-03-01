@@ -12,7 +12,7 @@ const oldforge = document.getElementById("oldforge")
 const oldbs = document.getElementById("oldbs")
 
 const last_sync_display = document.getElementById("ls")
-const datastore = "https://raw.githubusercontent.com/coderxaron/data/main/data/2026-02.json"
+const datastore = "https://raw.githubusercontent.com/coderxaron/data/main/data/2026-03.json" // Dont ask why i manually update it OK?
 
 window.onload = async () => {
   //get Group Data from Vercel since cros acsess doesnt work ._.
